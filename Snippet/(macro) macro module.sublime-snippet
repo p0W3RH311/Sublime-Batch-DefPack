@@ -1,0 +1,21 @@
+<snippet>
+	<content><![CDATA[
+set lf=^
+%=Blank Line=%
+%=Blank Line=%
+set ^"\n=^^^%lf%%lf%^%lf%%lf%^^"
+REM create macro "${1/\*//}"
+set $1=for %%x in (1 2) do if %%x==2 (%\n%
+      for /f "tokens=1,2" %%1 in ("!args!") do (%\n%
+           ${2:echo arg1 = %%1%\n%}
+           ${3:echo arg2 = %%2%\n%}
+      )%\n%
+ ) else setlocal enabledelayedexpansion ^& set args=
+
+%${1/\*//}%
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>macro</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.cmdfile</scope>
+</snippet>

@@ -1,0 +1,11 @@
+<!-- See http://www.sublimetext.com/docs/snippets for more information -->
+<snippet>
+    <content><![CDATA[
+for /l %%a in (0 1 10) do (    
+   $1
+)]]></content>
+    <!-- Optional: Tab trigger to activate the snippet -->
+    <tabTrigger>forl</tabTrigger>
+    <!-- Optional: Scope the tab trigger will be active in -->
+    <scope>source.cmdfile</scope>
+</snippet>
