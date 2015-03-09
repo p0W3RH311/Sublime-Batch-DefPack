@@ -1,6 +1,15 @@
 # Sublime-Batch-DefPack
 This package replaces the default Sublime Batch file package
 
+ ... provides extensive support for Batch file, including:
+
+  *  Full syntax highlighting for cmdfile source (.cmd files)
+  *  Many snippets to reduce typing
+  *  support new syntax for Cmd macro-module..
+```objj
+ %calllib% MyStr=:Reverse(Str) 
+```
+
 ## Snippets
 
 **forindo**
@@ -31,6 +40,6 @@ This package replaces the default Sublime Batch file package
 
 
 
-**NOTE:** This version is for Sublime Text 3
+**NOTE:** This version is for [Sublime Text 3](http://sublimetext.com/3)
 
 
