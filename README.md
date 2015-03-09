@@ -6,7 +6,7 @@ This package replaces the default Sublime Batch file package
   *  Full syntax highlighting for cmdfile source (.cmd files)
   *  Many snippets to reduce typing
   *  support new syntax for Cmd macro-module..
-```objj
+```Batch
  %calllib% MyStr=:Reverse(Str) 
 ```
 
