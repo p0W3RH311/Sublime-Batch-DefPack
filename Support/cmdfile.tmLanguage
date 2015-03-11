@@ -73,7 +73,7 @@
                 <key>name</key>
                 <string>keyword.operator.cmdfile</string>
                 <key>match</key>
-                <string>\b(?i:EQU|NEQ|LSS|LEQ|GTR|GEQ|==)\b</string>
+                <string>\b(?i:EQU|NEQ|LSS|LEQ|GTR|GEQ)\b|==</string>
             </dict>
             <dict>
                 <key>name</key>
