@@ -1,8 +1,8 @@
 <!-- See http://www.sublimetext.com/docs/snippets for more information -->
 <snippet>
     <content><![CDATA[
-for /r "." %%a in (.) do (    
-  $1
+for /r "${1:.}" %%a in (${2:.}) do (    
+  ${3:echo %%a}
 )]]></content>
     <!-- Optional: Tab trigger to activate the snippet -->
     <tabTrigger>forr</tabTrigger>

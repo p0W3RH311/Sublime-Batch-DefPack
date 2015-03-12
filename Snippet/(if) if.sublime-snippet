@@ -1,7 +1,7 @@
 <!-- See http://www.sublimetext.com/docs/snippets for more information -->
 <snippet>
     <content><![CDATA[
-if /i "%str1%$1"=="%str2%$2" ( 
+if /i "${1:%str1%}"=="${2:%str2%}" ( 
    $3
 )
 ]]></content>

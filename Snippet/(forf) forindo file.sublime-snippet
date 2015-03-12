@@ -1,8 +1,8 @@
 <!-- See http://www.sublimetext.com/docs/snippets for more information -->
 <snippet>
     <content><![CDATA[
-for /f "tokens=* delims=" %%a in ('$1') do (    
-
+for /f "${1:tokens=* delims=}" %%a in ('$2') do (    
+   ${3:echo %%a}
 )]]></content>
     <!-- Optional: Tab trigger to activate the snippet -->
     <tabTrigger>forf</tabTrigger>
