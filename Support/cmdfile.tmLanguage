@@ -10,6 +10,7 @@
 	<string>Cmd File</string>
 	<key>patterns</key>
 	<array>
+        <!-- nouvelle syntaxe %calllib% var=:func(param1,param2) -->
         <dict>
             <key>begin</key>
             <string>%[^%]+%\s+([^=]+)=(:\w+\()[^\)]*([)])</string>
@@ -40,12 +41,14 @@
             <string>\s|$</string>
            </dict>
             <dict>
+                <!-- commandes -->
                 <key>name</key>
                 <string>keyword.command.cmdfile</string>
                 <key>match</key>
                 <string>\b(?i:append|assoc|at|attrib|break|cacls|cd|chcp|chdir|chkdsk|chkntfs|cls|cmd|color|comp|compact|convert|copy|date|del|dir|disk(?:comp|copy|part)|doskey|driverquery|echo|endlocal|erase|fc|find(?:str)?|for(?:mat|files)|fsutil|ftype|graftabl|help|ipconfig|keyb|label|md|mkdir|mode|more|move|net(?:stat|sh)?|path|pause|ping|popd|power(?:shell|cfg)|print|prompt|pushd|rd|recover|reg(?:edit)?|ren(?:ame)?|replace|restore|rmdir|robocopy|route|runas|sc|schtasks|set|setlocal|shift|sort|start|subst|shutdown|systeminfo|time(?:out)?|title|tree|type|task(?:list|kill)|tskill|ver|verify|vol|whoami|where|winr(?:s|m)|wmic|xcopy)\b</string>
             </dict>
             <dict>
+                <!-- structure logique et loop -->
                 <key>name</key>
                 <string>keyword.control.statement.cmdfile</string>
                 <key>match</key>
@@ -70,12 +73,30 @@
                 <string>\b(?i)for\s+(?:/f|/r|/d|/l)?</string>
             </dict>
             <dict>
+                <!-- operateur de la commande if -->
                 <key>name</key>
                 <string>keyword.operator.cmdfile</string>
                 <key>match</key>
                 <string>\b(?i:EQU|NEQ|LSS|LEQ|GTR|GEQ)\b|==</string>
             </dict>
             <dict>
+                <key>match</key>
+                <!--
+                   le token "%~" dans une commande "rem" ou "::"
+                   cause une erreur fatale (bug). si on l'utilise
+                   sublime va mettre toute l'expression en subrillance
+                   pour nous indiquer une erreur. 
+                -->
+                <string>(?i:\bREM\b|::)\s*.*%~(?=\s|$)</string>
+                <key>name</key>
+                <string>invalid.illegal.token.cmdfile</string>
+            </dict>
+            <dict>
+                <!-- supporte 3 types de commentaire:
+                       REM comment 
+                       :: comment
+                       %= comment =% 
+                -->
                 <key>name</key>
                 <string>comment.inline.cmdfile</string>
                 <key>match</key>
@@ -87,7 +108,7 @@
                       \s*
                       (?i: rem|:: )
                       \s+
-                      (?: (?!%~). )*
+                      .*
                     |
                      %=[^%:]*=%
                 </string>
@@ -117,6 +138,7 @@
                 <string>"</string>
             </dict>
             <dict>
+            <!-- variable statique systemes -->
              <key>captures</key>
                     <dict>
                         <key>1</key>
@@ -141,6 +163,7 @@
                     <string>([!%])\b(?i:(ALLUSERSPROFILE|APPDATA|CommonProgram(?:Files(?:\(x86\))?|W6432)|COMPUTERNAME|ComSpec|FP_NO_HOST_CHECK|HOME(?:DRIVE|PATH)?|LANG|LOCALAPPDATA|LOGONSERVER|NUMBER_OF_PROCESSORS|OS|Path|PATHEXT|PROCESSOR_(?:ARCHITECTURE|IDENTIFIER|LEVEL|REVISION)|Program(?:Data|Files(?:\(x86\)|W6432))|PROMPT|PSModulePath|PUBLIC|SESSIONNAME|System(?:Drive|Root)?|TE?MP|USERDOMAIN(?:_ROAMINGPROFILE)?|USERNAME|USERPROFILE|windir))(\1)</string>
                 </dict>
                 <dict>
+                 <!-- quelques variables dynamiques et exothiques -->   
              <key>captures</key>
                     <dict>
                         <key>1</key>
@@ -165,6 +188,7 @@
                     <string>([!%])\b(?i:(CD|DATE|TIME|RANDOM|ERRORLEVEL|CMDEXTVERSION|CMDCMDLINE|HIGHESTNUMANODENUMBER|__cd__))(\1)</string>
                 </dict>
                 <dict>
+                  <!-- definition des variables en géneral -->
                   <key>captures</key>
                     <dict>
                         <key>1</key>
@@ -195,6 +219,9 @@
                 <string>[|]</string>
             </dict>
             <dict>
+                <!-- les redirection, supporte les redirections 
+                     des objects et handles...
+                -->
                 <key>name</key>
                 <string>keyword.operator.redirect.cmdfile</string>
                 <key>match</key>
