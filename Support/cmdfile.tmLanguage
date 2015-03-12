@@ -86,8 +86,28 @@
                    cause une erreur fatale (bug). si on l'utilise
                    sublime va mettre toute l'expression en subrillance
                    pour nous indiquer une erreur. 
+
+                   dans les redirections, les handles accepter sont
+                   [0-9] uniquement et ne doivent pqs etre identique dans la meme reirection, les expressions suivantes sont
+                   interites:
+                   43> file
+                   4>&12
+                   0<&44
+                   32>&1
+                   4>&4
+                   ...etc
                 -->
-                <string>(?i:\bREM\b|::)\s*.*%~(?=\s|$)</string>
+                <string>(?x)
+                    (?i:\bREM\b|::)\s*.*%~(?=\s|$)
+                     |
+                    (?:
+                       \d?[&gt;&lt;]&amp;\d{2,}
+                        |
+                       \d{2,}[&gt;&lt;]&amp;\d?
+                        |
+                       \d{2,}&gt;{1,2}
+                    )
+                </string>
                 <key>name</key>
                 <string>invalid.illegal.token.cmdfile</string>
             </dict>
