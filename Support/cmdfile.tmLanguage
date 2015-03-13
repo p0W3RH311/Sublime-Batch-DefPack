@@ -96,16 +96,27 @@
                    32>&1
                    4>&4
                    ...etc
+
+                   seul ls redirection > >> et < sont accepter, si vous tapez 
+                   >>> ou <<< une erreur de caractère invalide sera declenché. 
                 -->
                 <string>(?x)
                     (?i:\bREM\b|::)\s*.*%~(?=\s|$)
                      |
                     (?:
-                       \d?[&gt;&lt;]&amp;\d{2,}
+                       (?:&gt;{3,}|&lt;{3,})
                         |
-                       \d{2,}[&gt;&lt;]&amp;\d?
+                        (\d)&gt;{1,2}&amp;\1
+                        |
+                        (\d)&lt;&amp;\1
                         |
                        \d{2,}&gt;{1,2}
+                        |
+                       \d?&gt;{1,2}&amp;\d{2,}
+                        |
+                       \d{2,}&lt;&amp;\d?
+                        |
+                       \d?&lt;&amp;\d{2,}
                     )
                 </string>
                 <key>name</key>
