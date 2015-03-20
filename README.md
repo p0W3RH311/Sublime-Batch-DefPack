@@ -28,8 +28,10 @@ This package replaces the default Sublime Batch file package
 
 | Trigger  | Name |
 | -------  | :-----|
-| if       | if "%var1%"=="%var2%" () |
-| ifelse   | if "%var1%"=="%var2%" () else ...  |
+| if       | if /i "%var1%"=="%var2%" () |
+| else     | else ( ... ) |
+| ifelse   | if /i "%var1%"=="%var2%" ( ... ) else ...  |
+| elseif   | else if /i "%var1%"=="%var2%" (...) |
 
 **Miscellaneous**
 
@@ -37,6 +39,7 @@ This package replaces the default Sublime Batch file package
 | ------- | :---- |
 | macro   | macro module |
 | sub     | subroutine |
+| setl    | setlocal enable.... |
 
 
 

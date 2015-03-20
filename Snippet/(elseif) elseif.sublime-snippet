@@ -1,0 +1,11 @@
+<!-- See http://www.sublimetext.com/docs/snippets for more information -->
+<snippet>
+    <content><![CDATA[
+else if /i "${1:%str1%}"=="${2:%str2%}" ( 
+   $3
+)]]></content>
+    <!-- Optional: Tab trigger to activate the snippet -->
+    <tabTrigger>elseif</tabTrigger>
+    <!-- Optional: Scope the tab trigger will be active in -->
+    <scope>source.cmdfile</scope>
+</snippet>
