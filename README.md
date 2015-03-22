@@ -32,6 +32,7 @@ This package replaces the default Sublime Batch file package
 | else     | else ( ... ) |
 | ifelse   | if /i "%var1%"=="%var2%" ( ... ) else ...  |
 | elseif   | else if /i "%var1%"=="%var2%" (...) |
+| ifelseif | if /i (...) else if /i (...) else (...) |
 
 **Miscellaneous**
 

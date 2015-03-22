@@ -1,0 +1,15 @@
+<!-- See http://www.sublimetext.com/docs/snippets for more information -->
+<snippet>
+    <content><![CDATA[
+if /i "${1:%str1%}"=="${2:%str2%}" ( 
+   $3
+) else if /i "${4:%str3%}"=="${5:%str4%}" (
+   $6
+) else (
+   $7
+)]]></content>
+    <!-- Optional: Tab trigger to activate the snippet -->
+    <tabTrigger>ifelseif</tabTrigger>
+    <!-- Optional: Scope the tab trigger will be active in -->
+    <scope>source.cmdfile</scope>
+</snippet>
