@@ -45,7 +45,7 @@
                 <key>name</key>
                 <string>keyword.command.cmdfile</string>
                 <key>match</key>
-                <string>\b(?i:append|assoc|at|attrib|break|cacls|cd|chcp|chdir|chkdsk|chkntfs|cls|cmd|color|comp|compact|convert|copy|date|del|dir|disk(?:comp|copy|part)|doskey|driverquery|echo|endlocal|erase|fc|find(?:str)?|for(?:mat|files)|fsutil|ftype|graftabl|help|ipconfig|keyb|label|md|mkdir|mode|more|move|net(?:stat|sh)?|path|pause|ping|popd|power(?:shell|cfg)|print|prompt|pushd|rd|recover|reg(?:edit)?|ren(?:ame)?|replace|restore|rmdir|robocopy|route|runas|sc|schtasks|set|setlocal|shift|sort|start|subst|shutdown|systeminfo|time(?:out)?|title|tree|type|task(?:list|kill)|tskill|ver|verify|vol|whoami|where|winr(?:s|m)|wmic|xcopy)\b</string>
+                <string>\b(?i:append|assoc|at|attrib|break|cacls|cd|chcp|chdir|chkdsk|chkntfs|cls|(?&lt;!\.)cmd|color|comp|compact|convert|copy|date|del|dir|disk(?:comp|copy|part)|doskey|driverquery|echo|endlocal|erase|fc|find(?:str)?|for(?:mat|files)|fsutil|ftype|graftabl|help|ipconfig|keyb|label|md|mkdir|mode|more|move|net(?:stat|sh)?|path|pause|ping|popd|power(?:shell|cfg)|print|prompt|pushd|rd|recover|reg(?:edit)?|ren(?:ame)?|replace|restore|rmdir|robocopy|route|runas|sc|schtasks|set|setlocal|shift|sort|start|subst|shutdown|systeminfo|time(?:out)?|title|tree|type|task(?:list|kill)|tskill|ver|verify|vol|whoami|where|winr(?:s|m)|wmic|xcopy)\b</string>
             </dict>
             <dict>
                 <!-- structure logique et loop -->
@@ -70,7 +70,7 @@
                 <key>name</key>
                 <string>keyword.control.repeat.cmdfile</string>
                 <key>match</key>
-                <string>\b(?i)for\s+(?:/f|/r|/d|/l)?</string>
+                <string>\b(?i)for\s+(?:/f|/l|/d\s+/r|/d|/r)?</string>
             </dict>
             <dict>
                 <!-- operateur de la commande if -->

@@ -1,11 +1,11 @@
 <!-- See http://www.sublimetext.com/docs/snippets for more information -->
 <snippet>
     <content><![CDATA[
-for /d ${1:%%a} in (${2:*}) do (    
+for /d /r "." ${1:%%a} in (${2:*}) do (    
   ${3:echo %%a}
 )]]></content>
     <!-- Optional: Tab trigger to activate the snippet -->
-    <tabTrigger>ford</tabTrigger>
+    <tabTrigger>fordr</tabTrigger>
     <!-- Optional: Scope the tab trigger will be active in -->
     <scope>source.cmdfile</scope>
 </snippet>

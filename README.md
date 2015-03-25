@@ -18,11 +18,12 @@ This package replaces the default Sublime Batch file package
 
 | Trigger  | Name |
 | -------  | :-----|
-| for      | forindo |
-| forf     | forindo files  |
-| forr     | forindo recurse |
-| ford     | forindo Directory |
-| forl     | forindo loop |
+| for      | for %%x in (..) .. |
+| forf     | for /f ".." %%x in (..) ..  |
+| forr     | for /r ".." %%x in (..) .. |
+| ford     | for /d %%x in (..) .. |
+| forl     | for /l %%x in (..) .. |
+| fordr    | for /d /r %%x in (..) .. |
 
 **if statement**
 
